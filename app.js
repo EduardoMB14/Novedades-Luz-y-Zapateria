@@ -564,7 +564,7 @@ app.post('/auth', async (req, res) => {
                     req.session.user = results[0].Rol;
                     req.session.name = results[0].Nombre;
                     req.session.email = user; // Almacena el correo electrónico en la sesión
-                    renderAlert(req, res, 'login', "", "", 'success', false, 1000, '/');
+                    renderAlert(req, res, 'login', "", "", 'success', false, 1000, '');
                 }
             }
         });
