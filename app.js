@@ -19,7 +19,7 @@ dotenv.config({path:'./env/.env'});
 
 // - Invocamos el modulo de conexion de la BD
 const connection = require('./Database/db');
-const { get } = require('https');
+const { get } = require('http');
 
 // - Motor de plantillas
 app.set('view engine', 'ejs');
