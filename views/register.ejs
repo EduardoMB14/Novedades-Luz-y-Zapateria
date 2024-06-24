@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="resources/store-front.png" type="image/x-icon"/>
+    <title>Contacto</title>
+    <link
+      rel="stylesheet"
+      href="resources/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="resources/scss/Bootstrap5.css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="stylesheet" href="resources/css/style_login.css" />
+  </head>
+  <body>
+    <div
+      class="d-grid gap-2 d-md-flex justify-content-md-start "
+      style="position: absolute"
+    >
+      <p class="d-inline-flex gap-1">
+        <button
+          class="btn btn-sm"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          <i class="bi bi-info-circle-fill" style="font-size: 1em"></i>
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Al crear una cuenta acepta las politicas de privacidad y
+          confidencialidad de datos
+        </div>
+      </div>
+    </div>
+    <div class="container_form">
+      <!-- se utiliza para crear un formulario interactivo en una página web -->
+      <form
+        action="/register_form"
+        method="post"
+        class="shadow rounded form_register form_fade "
+      >
+        <h2>Sign Up</h2>
+        <div class="divider"></div>
+        <br />
+
+        <div class="input-group mb-3">
+          <span class="input-group-text"
+            ><i class="bi bi-person-circle"></i
+          ></span>
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="nom"
+              maxlength="80"
+              name="nom"
+              placeholder="Nombre"
+              required
+            />
+            <label for="nom">Nombre</label>
+          </div>
+        </div>
+        <br />
+
+        <div class="input-group mb-3">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+          <div class="form-floating">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="email"
+              required
+              autocomplete="name"
+            />
+            <label for="email">Correo</label>
+          </div>
+        </div>
+        <br />
+
+        <div class="input-group mb-3">
+          <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              id="pass"
+              name="pass"
+              maxlength="50"
+              autocomplete="new-password"
+              placeholder="password"
+              required
+            />
+            <label for="pass">Contraseña</label>
+          </div>
+          <div class="invalid_pass" id="invalid_pass">La contraseña debe tener al menos 8 caracteres</div>
+        </div>
+
+        <div class="register">
+          ya tienes cuenta ?
+          <a
+            class="icon-link icon-link-hover login"
+            style="--bs-link-hover-color-rgb: 0, 135, 84"
+            href="/login"
+          >
+            &nbsp; Inicia sesión <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <br />
+
+        <div class="send_button" id="send_button" style="display: block;">
+         
+        </div>
+        <br />
+      </form>
+    </div>
+
+    <script src="resources/js/SweetAlert2.js"></script>
+    <% if(typeof alert != "undefined") { %>
+    <script>
+        Swal.fire({
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %> ,
+            timer: <%= timer %>
+        }).then(()=>{
+            window.location='/<%= ruta %>'
+        })
+    </script>
+    <% } %>
+
+    <script src="resources/js/register.js"></script>
+    <script src="resources/js/Bootstrap5.js"></script>
+  </body>
+</html>

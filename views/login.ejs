@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="resources/store-front.png" type="image/x-icon"/>
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="resources/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="resources/scss/Bootstrap5.css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="stylesheet" href="resources/css/style_login.css" />
+  </head>
+  <body>
+    <div
+    class="d-grid gap-2 d-md-flex justify-content-md-start hidden"
+    style="position: absolute"
+  >
+    <p class="d-inline-flex gap-1">
+      <button
+        class="btn btn-sm"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseExample"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+      >
+        <i class="bi bi-info-circle-fill" style="font-size: 1em"></i>
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Al crear una cuenta acepta las politicas de privacidad y
+        confidencialidad de datos
+      </div>
+    </div>
+  </div>
+  <div class="container_form">
+    <!-- se utiliza para crear un formulario interactivo en una página web -->
+    <form
+      action="/auth"
+      method="post"
+      class="shadow rounded form_login form_fade"
+    >
+      <!-- Action: especifica la URL a la que se enviarán los datos del formulario -->
+      <!-- Método: especifica el método de envío de datos del formulario (en este caso, POST) -->
+      <!-- Clase: proporciona clases de estilo para el formulario -->
+      <!-- EncType: especifica el tipo de codificación de los datos del formulario (en este caso, para datos binarios como archivos) -->
+
+      <!-- Encabezado del formulario -->
+      <h2>Login</h2>
+      <!-- Línea divisoria -->
+      <div class="divider"></div>
+      <br />
+
+      <!-- Campo de entrada para el correo electrónico -->
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+        <!-- Contenedor de entrada flotante -->
+        <div class="form-floating">
+          <!-- entrada de datos para el formulario segun el tipo de input -->
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="email"
+            autocomplete="email"
+          />
+          <!-- La etiqueta <label> se utiliza para asociar un texto descriptivo con un elemento de formulario,
+               como un input. -->
+          <label for="email">Correo</label>
+        </div>
+      </div>
+      <br />
+
+      <!-- Campo de entrada para la contraseña -->
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+        <!-- Contenedor de entrada flotante -->
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="pass"
+            name="pass"
+            placeholder="password"
+            autocomplete="current-password"
+          />
+          <label for="pass">Contraseña </label>
+        </div>
+        <span
+          class="input-group-text"
+          style="cursor: pointer;"
+          id="password_text"
+          onclick="showpass_function()"
+        >
+          <i class="bi bi-eye-fill"></i>
+        </span>
+      </div>
+
+      <!-- Enlace para registrarse -->
+      <div class="register">
+        No tienes cuenta ?
+        <!-- Enlace para registrarse -->
+        <a class="icon-link icon-link-hover signup" style="--bs-link-hover-color-rgb: 0, 135, 84" href="/registrarse"> &nbsp; Registrate<i class="bi bi-arrow-right"></i></a>
+      </div>
+
+       <!-- Enlace para cambiar contraseña -->
+       <div class="register">
+        Olvidaste tu contraseña ?
+        <a class="icon-link icon-link-hover signup" style="--bs-link-hover-color-rgb: 0, 135, 84" href="/password-m"> &nbsp; Cambiar contraseña<i class="bi bi-arrow-right"></i></a>
+      </div>
+
+
+      <br />
+      <!-- Botón de envío del formulario -->
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-dark">
+          <i class="bi bi-send"> &nbsp; </i> Enviar
+        </button>
+      </div>
+      <br />
+    </form>
+  </div>
+
+    <script src="resources/js/SweetAlert2.js"></script>
+    <% if(typeof alert != "undefined") { %>
+    <script>
+        Swal.fire({
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %> ,
+            timer: <%= timer %>
+        }).then(()=>{
+            window.location='/<%= ruta %>'
+        })
+    </script>
+    <% } %>
+
+    <!-- Script de Bootstrap -->
+  <script src="resources/js/Bootstrap5.js"></script>
+
+  <!-- Script para mostrar/ocultar contraseña -->
+  <script>
+    // Crear los elementos de icono de ojo
+    const eye_slash = document.createElement('i');
+    eye_slash.className = 'bi bi-eye-slash-fill';
+
+    const eye = document.createElement('i');
+    eye.className = 'bi bi-eye-fill';
+
+    // Función para mostrar/ocultar contraseña
+    function showpass_function() {
+      // Input
+      let input_pass = document.getElementById('pass');
+
+      // Verificar el tipo actual del campo de contraseña
+      if (input_pass.type === "password") {
+        // Si es de tipo "password", cambiar a tipo "text" para mostrar la contraseña
+        input_pass.setAttribute("type", "text");
+        // Cambiar el icono a ojo cerrado
+        document.getElementById('password_text').innerHTML = '';
+        document.getElementById('password_text').appendChild(eye_slash.cloneNode(true));
+      } else {
+        // Si es de tipo "text", cambiar a tipo "password" para ocultar la contraseña
+        input_pass.setAttribute("type", "password");
+        // Cambiar el icono a ojo abierto
+        document.getElementById('password_text').innerHTML = '';
+        document.getElementById('password_text').appendChild(eye.cloneNode(true));
+      }
+    }
+  </script>
+      
+
+    <script src="resources/js/Bootstrap5.js"></script>
+  </body>
+</html>

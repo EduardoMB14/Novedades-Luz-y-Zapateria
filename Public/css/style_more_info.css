@@ -1,0 +1,124 @@
+main{
+    height: fit-content;
+}
+
+.fill{
+    display: flex;
+    width: 80%;
+}
+
+.selector {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+.nav-pills {
+    background-color: #222222 ;
+    font-weight: 550;
+    font-size: 1em;
+    font-family: 'Barlow-ExtraBold', sans-serif;
+}
+
+.nav-pills .nav-link:hover {
+    color: rgb(0, 157, 168);
+}
+
+.nav-pills .nav-item .active :hover {
+    color: rgb(0, 0, 0);
+}
+
+.info_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 2em;
+}
+
+.info{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1rem;
+    margin: 3rem;
+    letter-spacing: .1em;
+}
+
+.objetivo{
+    display: block;
+}
+
+.Ofrecemos{
+    display: none;
+}
+
+.mision{
+    display: none;
+}
+
+.vision{
+    display: none;
+}
+
+.mapa{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map iframe{
+    margin: 1em;
+    height: calc(50vh - 1em);
+    width: calc(50vw - 1em);
+}
+
+.horarios{
+    display: none;
+}
+
+@media screen and (max-width: 767px ) {
+    .nav-pills{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        padding: 1em;
+        font-size: .8em;
+    }
+    .nav-pills .nav-link{
+        padding: .5em !important;
+    }
+    .selector {
+        margin: 1%;
+    }
+    
+
+    .nav-pills {
+        font-size: .7em;
+    }
+    .info_container{
+        width: 100%;
+        height: auto;
+        padding: 0em;
+    }
+    
+    .info{
+        font-size: 1em;
+        text-align: justify;
+        padding: .7rem;
+        margin: .7rem;
+        letter-spacing: .1em;
+    }
+    
+    .map{
+        flex-direction: column;
+    }
+
+    .map iframe{
+        width: 100%;
+    }
+
+}

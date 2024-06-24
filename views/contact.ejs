@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="resources/store-front.png" type="image/x-icon"/>
+    <title>Contacto</title>
+    <link
+      rel="stylesheet"
+      href="resources/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="resources/scss/Bootstrap5.css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="stylesheet" href="resources/css/style_contact.css" />
+  </head>
+  <body>
+    <div class="conatiner_form">
+      <form
+        action=""
+        method="post"
+        class="shadow rounded"
+        enctype="multipart/form-data"
+      >
+        <h2>Contacto</h2>
+        <div class="divider"></div>
+        <br />
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Nombre"
+          />
+          <label for="name">Nombre</label>
+        </div>
+        <br />
+
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Correo"
+          />
+          <label for="email">Correo</label>
+        </div>
+        <br />
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="asn"
+            placeholder="Asunto"
+          />
+          <label for="asn">Asunto</label>
+        </div>
+        <br />
+
+        <div class="form-floating">
+          <!-- La etiqueta <textarea> se utiliza para crear un área de texto multi-línea, donde el usuario puede ingresar texto libremente. -->
+          <textarea
+            class="form-control"
+            maxlength="300"
+            cols="30"
+            rows="5"
+            placeholder=""
+            id="desc"
+          ></textarea>
+          <label for="desc">Descripcion:</label>
+        </div>
+
+        <br />
+
+        <input type="submit" class="btn btn-dark" value="Enviar" />
+      </form>
+    </div>
+
+    <script src="resources/js/Bootstrap5.js"></script>
+  </body>
+</html>

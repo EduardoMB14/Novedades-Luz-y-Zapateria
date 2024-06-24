@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="resources/store-front.png" type="image/x-icon"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tienda de ropa online donde podras comprar ropa, calzado, playeras, pantalones y mucho más" />
+    <meta name="keywords" content="Tienda, Tienda online, playeras, pantalones, compra ropa en linea" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Eliminar Productos</title>
+    <link rel="stylesheet" href="resources/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="resources/scss/Bootstrap5.css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <style>
+      main{
+        display: grid;
+        place-content: center;
+        width: 100%;
+      }
+      img{
+        width: 60px !important;
+      }
+      h2{
+        width: 100%;
+        text-align: start;
+        margin: 0;
+      }
+      .dropdown-item{
+        color: #fffcf6;
+        transition: 200ms ease-in;
+      }
+
+      .dropdown-item:hover{
+        color: #232323 !important;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/Carrito-de-compras">
+            <i class="bi bi-cart4 SVG-icon" style="color: #fff;"></i>
+            <span id="Cart_counter">0</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">NLYZ</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <% if( user == "admin") { %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/admin_page"> <i class="bi bi-person-fill"></i>  Administrador</a>
+                </li>
+                  <% } %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/"> <i class="bi bi-house-door-fill"></i>  Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Calzado"> <span class="hugeicons--running-shoes"></span> Calzado</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Playeras"> <span class="ion--shirt-sharp"></span> Playeras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Pantalones"> <span class="fluent-emoji-high-contrast--jeans"></span> Pantalones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Ropa-interior"> <span class="game-icons--underwear-shorts"></span> Ropa interior</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-fill-gear"></i>  Cuenta
+                  </a>
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item" href="/logout"><i class="bi bi-box-arrow-in-left"></i>  Cerrar sesión</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Sobre-nosotros"> <i class="bi bi-info-circle-fill"></i>  Sobre nosotros</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <main>
+      <h2>
+        <br><br>
+        <a href="/admin_page"><i class="bi bi-arrow-left-circle" style="font-size: 1em; color: #232323;"></i></a>
+        Tabla de Productos
+      </h2>
+      <div class=" table-container container mt-5 table-responsive">
+        <hr >
+        <table class="table table-hover" id="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Tipo</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Color</th>
+                    <th>Talla</th>
+                    <th>Marca</th>
+                    <th>Imagen</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+   </main>
+
+
+    <!-- Agrega pie de pagina a la pagina web -->
+    <footer>
+      <a href="/Contacto" target="_blank">contacto</a>
+      <div class="divider" style="width: 80%; margin-bottom: 1em;"></div>
+      <span class="span">
+       <!--Agregaos parrafo a la pagina web -->
+       Somos una tienda de moda que ofrece una amplia gama de ropa y
+       calzado de alta calidad a precios accesibles. Nos esforzamos por
+       proporcionar una experiencia de compra confiable y
+       satisfactoria, manteniéndonos al día con las últimas tendencias.
+      </span>
+      <span>
+       <br>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-instagram"></i>
+        <br><br>
+      </span><br>
+       <div class="down">
+         <p>© 2024 Copyright &nbsp; Novedades Luz y Zapatería</p>
+       </div>
+     </footer>
+
+     <script src="resources/js/delete_products.js"></script>
+
+
+    <script src="resources/js/SweetAlert2.js"></script>
+     <% if(typeof alert != "undefined") { %>
+      <script>
+          Swal.fire({
+              title: '<%= alertTitle %>',
+              text: '<%= alertMessage %>',
+              icon: '<%= alertIcon %>',
+              showConfirmButton: <%= showConfirmButton %>,
+              timer: <%= timer %>
+          }).then(() => {
+              window.location = '/<%= ruta %>'
+          })
+      </script>
+      <% } %>
+
+    <script src="resources/js/Bootstrap5.js"></script>
+    <script src="resources/js/cart_service.js" defer></script>
+
+</body>
+</html>

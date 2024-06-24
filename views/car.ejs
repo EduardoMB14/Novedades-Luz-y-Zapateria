@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <img src="" id="change" alt="">
+        <button id="prev"><</button>
+        <button id="next">></button>
+    </div>
+
+    <script>
+        
+        prompt("Nombre:");
+        prompt("Edad:");
+        let x = 0
+        const img_array = ["resources/img/Calzado.png","resources/img/Calzado (1).png","resources/img/calgray1.png","resources/img/calgray2.png","resources/img/calgray.png"]
+        let img_change = document.getElementById("change");
+        img_change.src = img_array[0];
+        let next = document.getElementById("next").addEventListener("click", function(event){
+            if(x<4){
+                img_change.src = img_array[x];
+                x++;
+            }else{
+                x = 0
+                img_change.src = img_array[x];
+                x++
+            }
+        });
+        let prev_button = document.getElementById("prev").addEventListener("click", function(event){
+            event.preventDefault();
+            if(x<=0){
+                    x=4;
+                    img_change.src = img_array[x];
+                    x--;
+                }else{
+                    img_change.src = img_array[x];
+                    x--;
+                }
+        });
+    </script>
+</body>
+</html>

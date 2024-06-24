@@ -1,0 +1,325 @@
+@font-face {
+    font-family: 'Holy-moly';
+    src: url('../Fonts/youregone/ClauslyFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.navbar {
+    position: fixed; /* Fija el menú en la ventana del navegador */
+    width: 100%; /* Establece el ancho del menú al 100% de la ventana */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    margin-top: -4em; /* Margen superior negativo */
+    display: inline-block; /* Muestra en línea */
+    color: #ffffff; /* Color de texto blanco */
+}
+
+.SVG-icon{
+  color: #fffcf6;
+  margin: 0;
+}
+
+body{
+    background-color: #fffcf6;
+} 
+
+header{
+    -webkit-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffcf6;
+    flex-direction: column;
+    background: url(../img/14.webp);
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo, manteniendo la proporción */
+    height: 70vh;
+}
+
+header h1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    font-size: 10em;
+    letter-spacing: .02em;
+    font-weight: 100;
+    color: #ffffff;
+    width: 100%;
+    height: fit-content;
+    font-family: 'Holy-moly', 'Barlow', sans-serif;
+    margin: 0;
+    padding: .2em;
+}
+/*text-shadow:
+            0 0 5px #ffa500,
+            0 0 15px #ffa500,
+            0 0 20px #ffa500,
+            0 0 40px #ffa500,
+            0 0 60px #ff0000,
+            0 0 10px #ff8d00,
+            0 0 160px #ff0000;*/
+
+header p {
+    width: 70%;
+    color: #fffcf6; /* Texto en negro para mayor contraste */
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    background-color: #2323238a;
+    padding: .2em;
+}
+
+.info-section{
+    display: flex;
+    gap: 3em;
+    margin-top: 2em;
+    margin-bottom: 5em;
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
+
+.main-info{
+  min-height: 80vh;
+  height: fit-content;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #232323;
+  margin: 0em 0em 0em 0em ;
+}
+
+.container_title{
+  text-align: center;
+  font-weight: 700;
+  font-size: 2em;
+  color: #fffcf6;
+  
+}
+
+.menu{
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: auto;
+  width: 80%;
+  margin: 20vh 0vh;
+}
+
+.crud-section{
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3em;
+  margin: 3em 0em 1em 0em;
+}
+
+.block-menu{
+  background-color: #282828;
+  color: #fffcf6;
+  font-size: 1em;
+  padding: 2em 3em;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 300;
+  text-align: center;
+  border: 1px solid #282828 ;
+}
+  
+.block-menu h5{
+    font-weight: 500;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+
+.carousel-img {
+    /* Permite posicionar un elemento de forma relativa a su 
+    posición normal en el flujo del documento. */
+    max-height: 80vh;
+    width: 100%;
+    margin: 0;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    /*color: #8d8d8d00; TMP*/
+}
+
+.carousel-HW{
+    background: #232323;
+    margin-top: 0em;
+    width: 100%;
+}
+
+.carousel_title{
+    background-color: #232323;
+    font-size: 2em;
+    color: #fffcf6;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.cs{
+    display: grid;
+    place-content: center;
+    text-align: center ;
+}
+
+.card-title .card-text{
+    text-align: center;
+    color: #232323;
+}
+
+.card .card-img-top {
+    display: grid;
+    place-content: center ;
+    height: 40vh ;
+}
+
+
+.list-g{
+    width: 100% ;
+    margin: 0;
+}
+
+.btn_s{
+    display: flex;
+}
+
+main{
+    height: auto;
+}
+
+
+
+.entypo--price-tag {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M19.388.405a.605.605 0 0 0-1.141.399c.929 2.67-.915 4.664-2.321 5.732l-.568-.814c-.191-.273-.618-.5-.95-.504l-3.188.014a2.162 2.162 0 0 0-1.097.338L.729 12.157a1.01 1.01 0 0 0-.247 1.404l4.269 6.108c.32.455.831.4 1.287.082l9.394-6.588c.27-.191.582-.603.692-.918l.998-3.145c.11-.314.043-.793-.148-1.066l-.346-.496c1.888-1.447 3.848-4.004 2.76-7.133m-4.371 9.358a1.608 1.608 0 0 1-2.24-.396a1.614 1.614 0 0 1 .395-2.246a1.607 1.607 0 0 1 1.868.017c-.272.164-.459.26-.494.275a.606.606 0 0 0 .259 1.153c.086 0 .174-.02.257-.059c.194-.092.402-.201.619-.33a1.615 1.615 0 0 1-.664 1.586'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  .mdi--size-xl {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6 7h2l1 2.5L10 7h2l-2 5l2 5h-2l-1-2.5L8 17H6l2-5zm7 0h2v8h4v2h-6z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    line-height: 0em;
+  }
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Product-list{
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); 
+        gap: .8em; 
+        padding: 1em 2em 1em 2em; /* arriba derecha abajo izquierda */
+    }
+    
+
+    .btn_100{
+        font-size: .8em;
+    }
+    
+    .h5{
+        font-size: 1em;
+    }
+    
+    .product-info{
+        font-size: .8em;
+    }
+
+ header{
+    height: 55vh;
+}
+
+header h1{
+    font-size: 5.5em;
+}
+
+}
+  
+
+
+@media screen and (max-width: 767px ) {
+
+.btn_100{
+    font-size: .6em;
+}
+
+.h5{
+    font-size: .8em;
+}
+
+.product-info{
+    font-size: .8em;
+}
+
+.SVG-icon{
+    margin-left: 0;
+}
+
+
+header{
+    height: 60vh;
+    flex-direction: column;
+}
+header h1{
+    font-size: 5.5em;
+}
+header p{
+ width: 90%;
+ font-size: 1em;
+}
+
+.carousel-img{
+    aspect-ratio: 1/0.5;
+}
+
+.info-section{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1em;
+}
+.info-section .p{
+    width: 90%;
+    margin: 0;
+    padding: 2em;
+}
+
+.crud-section{
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.card .card-img-top {
+    height: 30vh;
+}
+
+}

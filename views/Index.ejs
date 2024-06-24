@@ -1,0 +1,250 @@
+<!-- Etiqueta de apertura que especifica el tipo de documento -->
+<!DOCTYPE html>
+<!-- Definimos el lenguaje -->
+<html lang="es">
+  <!-- Agregamos el head de la pagina para los encabezados y configuracion de la pagina -->
+  <head>
+    <link rel="shortcut icon" href="resources/store-front.png" type="image/x-icon"/>
+    <!-- Cargamos un par metadatos-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tienda de ropa online donde podras comprar ropa, calzado, playeras, pantalones y mucho más"/>
+    <meta name="keywords" content="Tienda, Tienda online, playeras, pantalones, compra ropa en linea" />
+    <meta name="robots" content="index, follow" />
+    <!-- Define el titulo del documento -->
+    <title>Novedades Luz y Zapatería</title>
+    <!-- Agregames link de css para estilizar -->
+    <link rel="stylesheet" href="resources/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="resources/scss/Bootstrap5.css" />
+    <link rel="stylesheet" href="resources/css/products.css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="stylesheet" href="resources/css/style_index.css" />
+    <style>
+      .dropdown-item{
+        color: #fffcf6;
+        transition: 200ms ease-in;
+      }
+
+      .dropdown-item:hover{
+        color: #232323 !important;
+      }
+    </style>
+  </head>
+  <!-- Agregamos la etiqueda body para el contenido de la pagina web  DOM-->
+  <body>
+      <!-- Defininmos la barra de navegacion del sitio -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/Carrito-de-compras">
+            <i class="bi bi-cart4 SVG-icon"></i>
+            <span id="Cart_counter">0</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">NLYZ</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <% if( user == "admin") { %>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin_page"> <i class="bi bi-person-fill"></i>  Administrador</a>
+                </li>
+                <% } %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/"> <i class="bi bi-house-door-fill"></i>  Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Calzado"> <span class="hugeicons--running-shoes"></span> Calzado</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Playeras"> <span class="ion--shirt-sharp"></span> Playeras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Pantalones"> <span class="fluent-emoji-high-contrast--jeans"></span> Pantalones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Ropa-interior"> <span class="game-icons--underwear-shorts"></span> Ropa interior</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-fill-gear"></i>  Cuenta
+                  </a>
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item" href="/logout" style="color: #fffcf6; "> <i class="bi bi-box-arrow-in-left"></i>  Cerrar sesión</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Sobre-nosotros"> <i class="bi bi-info-circle-fill"></i>  Sobre nosotros</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Defininmos el encabezado del sitio -->
+    <header>
+      <h1>Novedades Luz <br> y Zapatería</h1>
+      <!--Define el titulo principal de la pagina para los buscadores-->
+      <p>  Somos una tienda de moda que ofrece una amplia gama de ropa y
+        calzado de alta calidad a precios accesibles. </p>
+    </header>
+
+    <div class="main-info">
+      <div class="menu">
+        <h2 class="container_title">! Bienvenido a nuestra tienda ¡<br>Conocenos</h2>
+        <div class="divider"></div>
+        <div class="crud-section">
+          <div class="block-menu">
+            
+            <h5> <i class="bi bi-currency-dollar"></i> &nbsp; Productos a precio accesibles</h5>
+            <div class="divider"></div><br>
+            <p > Variedad de diferentes marcas a un precio accesible y de la mejor calidad</p>
+          </div>
+  
+          <div class="block-menu">
+            <h5> <span class="entypo--price-tag"></span> Productos de varias marcas</h5>
+            <div class="divider"></div><br>
+            <p > Productos de distintas marcas, tanto de calzado como de vestir</p>
+          </div>
+  
+          <div class="block-menu">
+            <h5 > <span class="mdi--size-xl"></span> &nbsp; Variedad de tallas</h5>
+            <div class="divider"></div><br>
+            <p > Manejamos una amplia variedad de tallas en calzado y ropa deportiva</p>
+          </div>
+  
+          <div class="block-menu">
+            <h5> <i class="bi bi-stars" style="font-size: 1.5em;"></i> &nbsp; Variedad de estilos</h5>
+            <div class="divider"></div><br>
+            <p > Manejamos variedad de colores en pantalones, calzado, playeras, ropa interior entre otros</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Partimos el dom en secciones para separar el carrusel -->
+    <h2 class="carousel_title">!Conoce nuestros productos¡</h2>
+    <section class="carousel-HW center">
+      <div id="carouselExampleInterval" class="carousel slide controller" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <a href="/Calzado">
+              <img src="resources/img/shoes3.webp" class="d-block carousel-img" alt="..." />
+               <h5 style=" color: #fffcf6; font-size: 2em; text-decoration: underline; text-align: center; padding: .5em; "> Calzado </h5>
+            </a>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <a href="/Pantalones">
+              <img src="resources/img/jeans2.webp" class="d-block carousel-img" alt="..." />
+              <h5 style=" color: #fffcf6; font-size: 2em; text-decoration: underline; text-align: center; padding: .5em; "> Pantalones </h5>
+            </a>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <a href="/Playeras">
+              <img src="resources/img/shirt.webp" class="d-block carousel-img" alt="..." />
+              <h5 style=" color: #fffcf6; font-size: 2em; text-decoration: underline; text-align: center; padding: .5em; "> Playeras </h5>
+            </a>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <a href="/Ropa-interior">
+              <img src="resources/img/underwear2.webp" class="d-block carousel-img" alt="..." />
+              <h5 style=" color: #fffcf6; font-size: 2em; text-decoration: underline; text-align: center; padding: .5em; "> Ropa interior </h5>
+            </a>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev" >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next" >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+    
+    <!--Inserta un salto de linea o de bloque -->
+    <div class="divider"></div>
+
+
+    <!-- Definimos el contenido principal de la pagina -->
+    <main>
+      <div class="cs text-bg-tertiary">
+          <h5 class="card-title">Tenis deportivos</h5>
+          <p class="card-text">Calzado con diseño ergonomico y comodo para caminar, correr o saltar, incluso estan elaboorados con materiales que los hacen ligeros y faciles de transportar</p>
+      </div>
+      <br>
+
+      <div class="card-group">
+        <div class="card">
+          <img src="resources/img/15.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Tenis</h5>
+            <p class="card-text">El calzado deportivo que manejamos tiene suela ergonomica y diseños llamativos para los jovenes, teniendo diferentes tipos de teniz como de zapatos.
+              Elaborados con materiales de calidad que garantizan su duracion y facil transporte.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Ultima actualizacion hace 1 mes</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="resources/img/shirt2.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Playeras</h5>  
+            <p class="card-text">Manejamos playeras de distintas marcas como POLO, Tomy, Adidas, Playeras acuaticas entre otras.
+              La calidad de nuestros productos esta garantizada.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Ultima actualizacion hace 1 mes</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="resources/img/jeans.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pantalones</h5>
+            <p class="card-text">Manejamos pantalones de distintas marcas como ABSD tanto pantalones vaqueros, entubados, skynny, pantalon de dama, shorts, entre otras variedades.
+              Tambien contamos con ropa para playa y bermudas acuaticas. </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Ultima actualizacion hace 1 mes</small>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Agrega pie de pagina a la pagina web -->
+    <footer>
+      <a href="/Contacto" target="_blank">contacto</a>
+      <div class="divider" style="width: 80%; margin-bottom: 1em;"></div>
+      <span class="span">
+       <!--Agregaos parrafo a la pagina web -->
+       Somos una tienda de moda que ofrece una amplia gama de ropa y
+       calzado de alta calidad a precios accesibles. Nos esforzamos por
+       proporcionar una experiencia de compra confiable y
+       satisfactoria, manteniéndonos al día con las últimas tendencias.
+      </span>
+      <span>
+       <br>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-instagram"></i>
+        <br><br>
+      </span><br>
+       <div class="down">
+         <p>© 2024 Copyright &nbsp; Novedades Luz y Zapatería</p>
+       </div>
+     </footer>
+
+    <!-- Agregamos el script para un mejor funcionamiento -->
+    <script src="resources/js/Bootstrap5.js"></script>
+    <script src="resources/js/cart_service.js" defer></script>
+  </body>
+</html>

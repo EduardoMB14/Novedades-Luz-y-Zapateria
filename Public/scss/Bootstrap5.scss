@@ -1,0 +1,24 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Create your own map
+$custom-colors: (
+  "nlyza": #00bbae,
+  "nlyzb": #009b90,
+  "nlyzc": #efb810,
+  "nlyzd": #daa300,
+  "nlyze": #05a300
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

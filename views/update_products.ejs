@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="shortcut icon" href="resources/store-front.png" type="image/x-icon"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tienda de ropa online donde podras comprar ropa, calzado, playeras, pantalones y mucho más" />
+    <meta name="keywords" content="Tienda, Tienda online, playeras, pantalones, compra ropa en linea" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Actualizar Productos</title>
+    <link rel="stylesheet" href="resources/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="resources/scss/Bootstrap5.css" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <style>
+      main{
+        width: 100%;
+        margin-top: 0;
+      }
+      table{
+        margin: 0;
+      }
+      form{
+        display: none;
+        width: 100%;
+      }
+      img{
+        width: 60px !important;
+      }
+      h2{
+        text-align: start ;
+      }
+      .dropdown-item{
+        color: #fffcf6;
+        transition: 200ms ease-in;
+      }
+
+      .dropdown-item:hover{
+        color: #232323 !important;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/Carrito-de-compras">
+            <i class="bi bi-cart4 SVG-icon" style="color: #fff;"></i>
+            <span id="Cart_counter">0</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">NLYZ</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <% if( user == "admin") { %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/admin_page"> <i class="bi bi-person-fill"></i>  Administrador</a>
+                </li>
+                  <% } %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/"> <i class="bi bi-house-door-fill"></i>  Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Calzado"> <span class="hugeicons--running-shoes"></span> Calzado</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Playeras"> <span class="ion--shirt-sharp"></span> Playeras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Pantalones"> <span class="fluent-emoji-high-contrast--jeans"></span> Pantalones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Ropa-interior"> <span class="game-icons--underwear-shorts"></span> Ropa interior</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-fill-gear"></i>  Cuenta
+                  </a>
+                  <ul class="dropdown-menu bg-dark">
+                    <li><a class="dropdown-item" href="/logout"><i class="bi bi-box-arrow-in-left"></i>  Cerrar sesión</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Sobre-nosotros"> <i class="bi bi-info-circle-fill"></i>  Sobre nosotros</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+    <main>
+      <h2>
+        <br><br>
+        <a href="/admin_page"><i class="bi bi-arrow-left-circle" style="font-size: 1em; color: #232323;"></i></a>
+        Tabla de Productos
+      </h2>
+      <div class=" table-container container mt-5 table-responsive">
+        <table class="table table-hover table-striped" id="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Tipo</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Color</th>
+                    <th>Talla</th>
+                    <th>Marca</th>
+                    <th>Imagen</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <form action="/update-producto-m" method="post" style="display: none;" id="mod_form">
+      <h5 style="font-weight: 700; font-size: 2em;">Actualizar productos</h5>
+      <br>
+      <div class="mb-3">
+        <label for="id_p" class="form-label">ID:</label>
+        <input type="text" class="form-control" name="id_product" id="id_p" readonly>
+      </div>
+      
+      <div class="mb-3">
+        <label for="nom_p" class="form-label">Nombre del producto:</label>
+        <input required type="text" class="form-control" name="nom_product" id="nom_p" >
+      </div>
+      
+      <div class="mb-3">
+        <label for="desc_p" class="form-label">Descripción:</label>
+        <input required type="text" class="form-control" name="desc_product" id="desc_p">
+      </div>
+      
+      <div class="mb-3">
+        <label for="price_product" class="form-label">Precio del producto:</label>
+        <input required type="text" class="form-control" name="price_product" id="price_product">
+      </div>
+      
+      <div class="mb-3">
+        <label for="type_p" class="form-label">Tipo:</label>
+        <select name="type_product" class="form-select" id="type_p">
+          <option value="shoes">Calzado</option>
+          <option value="jeans">Pantalones</option>
+          <option value="t_shirts">Playera</option>
+          <option value="underwear">Ropa interior</option>
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label for="m__product" class="form-label">Marca:</label>
+        <input required type="text" class="form-control" name="m__product" id="m__product">
+      </div>
+      
+      <div class="mb-3">
+        <label for="color_product" class="form-label">Color:</label>
+        <input required type="text" class="form-control" name="color_product" id="color_product">
+      </div>
+      
+      <div class="mb-3">
+        <label for="size_product" class="form-label">Talla:</label>
+        <input required type="text" class="form-control" name="size_product" id="size_product">
+      </div>
+      
+      <div class="mb-3">
+        <label for="cant_product" class="form-label">Cantidad:</label>
+        <input required type="text" class="form-control" name="cant_product" id="cant_product">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-dark" style="width: 100%; margin-bottom: .5em;"> <i class="bi bi-arrow-up-short"></i> Modificar producto </button>
+      <button type="button" id="cancel-mod" class="btn btn-danger"  style="width: 100%;"> <i class="bi bi-x-circle"></i> Cancelar</button>
+    </form>
+
+
+   </main>
+
+
+    <!-- Agrega pie de pagina a la pagina web -->
+    <footer>
+      <a href="/Contacto" target="_blank">contacto</a>
+      <div class="divider" style="width: 80%; margin-bottom: 1em;"></div>
+      <span class="span">
+       <!--Agregaos parrafo a la pagina web -->
+       Somos una tienda de moda que ofrece una amplia gama de ropa y
+       calzado de alta calidad a precios accesibles. Nos esforzamos por
+       proporcionar una experiencia de compra confiable y
+       satisfactoria, manteniéndonos al día con las últimas tendencias.
+      </span>
+      <span>
+       <br>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-instagram"></i>
+        <br><br>
+      </span><br>
+       <div class="down">
+         <p>© 2024 Copyright &nbsp; Novedades Luz y Zapatería</p>
+       </div>
+     </footer>
+
+     <script src="resources/js/update_products.js"></script>
+     <script src="resources/js/cart_service.js" defer></script>
+
+
+    <script src="resources/js/SweetAlert2.js"></script>
+     <% if(typeof alert != "undefined") { %>
+      <script>
+          Swal.fire({
+              title: '<%= alertTitle %>',
+              text: '<%= alertMessage %>',
+              icon: '<%= alertIcon %>',
+              showConfirmButton: <%= showConfirmButton %>,
+              timer: <%= timer %>
+          }).then(() => {
+              window.location = '/<%= ruta %>'
+          })
+      </script>
+      <% } %>
+
+    <script src="resources/js/Bootstrap5.js"></script>
+
+</body>
+</html>
